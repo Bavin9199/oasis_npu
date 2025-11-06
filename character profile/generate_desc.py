@@ -10,6 +10,7 @@ Usage:
 """
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from random_username.generate import generate_username
 from datetime import datetime
 import os
 os.environ["OPENROUTER_API_KEY"] = "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"
@@ -224,7 +225,6 @@ def get_action_habits(mbti, age, gender, country, profession, social_roles, cogn
     [string of topics]
     ["artificial intelligence", "technology trends", "psychology"]
     Ensure your output looks like the output above, don't output anything else.""" 
-
     response = client.chat.completions.create(model="gpt-4o-mini",
                                             messages=[{
                                                 "role": "system",
@@ -234,6 +234,32 @@ def get_action_habits(mbti, age, gender, country, profession, social_roles, cogn
     topics = response.choices[0].message.content.strip()
     return json.loads(topics)
     
+def get_user_name(mbti, age, gender, country, profession, social_roles, cognitive_bias, network_levels):
+    username_list = generate_username(20)
+    prompt = f"""Based on the provided personality traits, age, gender, profession, social roles and cognitive bias, please select one proper user name from the username list.-
+    Input:
+        Personality Traits: {mbti}
+        Age: {age}
+        Gender: {gender}
+        Country: {country}
+        Profession: {profession}
+        Social roles: {social_roles}
+        Cognitive bias: {cognitive_bias}
+        network_levels: {network_levels}
+        user_name_list: {username_list}
+    Output:
+    [string of topics]
+    ["XXX"]
+    Ensure your output ONLY contains one username, don't output anything else.""" 
+
+    response = client.chat.completions.create(model="gpt-4o-mini",
+                                            messages=[{
+                                                "role": "system",
+                                                "content": prompt
+                                            }])
+
+    topics = response.choices[0].message.content.strip()
+    return json.loads(topics)
 
 # --------------------------
 # Utilities: load and extract
@@ -291,8 +317,10 @@ def build_user_profile():
     cognitive_bias = get_cognitive_bias(mbti, age, gender, country, profession)
     network_levels = get_network_levels(mbti, age, gender, country, profession, social_roles, cognitive_bias)
     action_habits = get_action_habits(mbti, age, gender, country, profession, social_roles, cognitive_bias, network_levels)
+    user_name = get_user_name(mbti, age, gender, country, profession, social_roles, cognitive_bias, network_levels)
     
     profile = {}
+    profile["user_name"] = user_name
     profile['age'] = age
     profile['gender'] = gender
     profile['mbti'] = mbti
@@ -349,6 +377,7 @@ def build_prompt(profile: Dict[str, Any],
     cognitive_bias = profile.get("cognitive_bias")
     network_levels = profile.get("network_levels")
     action_habits = profile.get("action_habits")
+    user_name = profile.get("user_name")
 
     # Compose the enhanced prompt
     prompt_lines = []
@@ -366,7 +395,7 @@ def build_prompt(profile: Dict[str, Any],
     prompt_lines.append("2) Online Behavior: A line describing all notable patterns in the individual's behavior in digital or social networks, such as activity rhythms, schedule flexibility, social roles, network level, and biases in information consumption.")
     prompt_lines.append("Ensure these two summary lines are concise, factually grounded in the input attributes, and written in fluent, natural English.")
     prompt_lines.append("Input attributes and reference snippets:")
-    prompt_lines.append(f"The person is a {age}-year-old {gender} people. The mbti of this person is {mbti}. The profession of this person is {profession}. The social roles of this person is {social_roles}.")
+    prompt_lines.append(f"The user name of this person is {user_name}. The person is a {age}-year-old {gender} people. The mbti of this person is {mbti}. The profession of this person is {profession}. The social roles of this person is {social_roles}.")
     prompt_lines.append(f"The cognitive bias of this person is {cognitive_bias}. The network levels of this person is {network_levels}. The action_habits of this person is {action_habits}.")
     prompt_lines.append("----")
 
@@ -509,7 +538,7 @@ def save_user_data(user_desc, filename):
 
 
 if __name__ == "__main__":
-    N = 2  # Target user number
+    N = 10  # Target user number
     user_desc = generate_user_descriptions(N)
     output_path = './user_desc.json'
     save_user_data(user_desc, output_path)
