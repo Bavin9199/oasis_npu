@@ -10,6 +10,7 @@ Usage:
 """
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import csv
 from random_username.generate import generate_username
 from datetime import datetime
 import os
@@ -101,7 +102,7 @@ def get_random_profession():
     return random.choices(professions, p_professions)[0]
 
 def get_interested_topics(mbti, age, gender, country, profession):
-    prompt = f"""Based on the provided personality traits, age, gender and profession, please select 2-3 topics of interest from the given list.
+    prompt = f"""Based on the provided personality traits, age, gender and profession, please select 1-2 topics of interest from the given list.
     Input:
         Personality Traits: {mbti}
         Age: {age}
@@ -118,7 +119,7 @@ def get_interested_topics(mbti, age, gender, country, profession):
         7. Fun: Activities or ideas that are light-hearted or amusing. This topic covers a wide range of entertainment choices and leisure activities that bring joy, laughter, and enjoyment to individuals and groups.
     Output:
     [string of topics]
-    ["artificial intelligence", "technology trends", "psychology"]
+    ["artificial intelligence", "technology trends"]
     Ensure your output looks like the output above, don't output anything else.""" 
 
     response = client.chat.completions.create(model="gpt-4o-mini",
@@ -132,7 +133,7 @@ def get_interested_topics(mbti, age, gender, country, profession):
 
 def get_social_roles(mbti, age, gender, country, profession):
     social_roles_content = load_json("social_roles.json")
-    prompt = f"""Based on the provided personality traits, age, gender and profession, please select 2-3 social roles from the given list.-
+    prompt = f"""Based on the provided personality traits, age, gender and profession, please select 1 social role from the given list.-
     Input:
         Personality Traits: {mbti}
         Age: {age}
@@ -143,7 +144,7 @@ def get_social_roles(mbti, age, gender, country, profession):
         {social_roles_content}
     Output:
     [string of topics]
-    ["artificial intelligence", "technology trends", "psychology"]
+    ["artificial intelligence"]
     Ensure your output looks like the output above, don't output anything else.""" 
 
     response = client.chat.completions.create(model="gpt-4o-mini",
@@ -182,7 +183,7 @@ def get_cognitive_bias(mbti, age, gender, country, profession):
 
 def get_network_levels(mbti, age, gender, country, profession, social_roles, cognitive_bias):
     network_level_content = load_json("network_level.json")
-    prompt = f"""Based on the provided personality traits, age, gender, profession, social roles and cognitive bias, please select 2-3 network levels from the given list.-
+    prompt = f"""Based on the provided personality traits, age, gender, profession, social roles and cognitive bias, please select 1 network level from the given list.-
     Input:
         Personality Traits: {mbti}
         Age: {age}
@@ -195,7 +196,7 @@ def get_network_levels(mbti, age, gender, country, profession, social_roles, cog
         {network_level_content}
     Output:
     [string of topics]
-    ["artificial intelligence", "technology trends", "psychology"]
+    ["artificial intelligence"]
     Ensure your output looks like the output above in one line, don't output anything else.""" 
 
     response = client.chat.completions.create(model="gpt-4o-mini",
@@ -221,9 +222,10 @@ def get_action_habits(mbti, age, gender, country, profession, social_roles, cogn
         network_levels: {network_levels}
     Available Action Habits and related descriptions:
         {action_habits_content}
+    Please choose 2-3 action habits from the second_level topic in available action habits list.
     Output:
     [string of topics]
-    ["artificial intelligence", "technology trends", "psychology"]
+    ["artificial intelligence"]
     Ensure your output looks like the output above, don't output anything else.""" 
     response = client.chat.completions.create(model="gpt-4o-mini",
                                             messages=[{
@@ -483,66 +485,60 @@ def generate_description(*, use_llm: bool = True) -> Dict[str, Any]:
         datasets[dim] = load_json(path)
 
     prompt = build_prompt(profile, datasets, language="English", tone="neutral")
-    result = {"profile": profile, "prompt": prompt}
+    result = {}
 
     if use_llm:
         try:
             description = call_llm(prompt)
-            result.update({"description": description})
-            print("_______")
-            print(result)
-            return result
+            return description.strip()
         except Exception as e:
             # fall back to local concatenation
             result["llm_error"] = str(e)
             # continue to local fallback
-    print("_______")
-    print(result)
+
     # Local fallback: collect texts and join into readable summary
-    parts = []
-    for dim, data in datasets.items():
-        vals = profile.get(dim, [])
-        if not isinstance(vals, list):
-            vals = [vals]
-        for v in vals:
-            if isinstance(data, list):
-                # 如果是列表，则在列表中查找包含该键的字典
-                entry = next((item.get(v) for item in data if isinstance(item, dict) and v in item), None)
-            else:
-                entry = data.get(v)
-            if entry:
-                texts = extract_texts_from_entry(entry)
-                if texts:
-                    parts.append(" ".join(texts))
-    fallback = " ".join(parts) if parts else "(no data available to describe user)"
-    result.update({"description": fallback, "method": "local_fallback"})
-    return result
+    #parts = []
+    #for dim, data in datasets.items():
+    #    vals = profile.get(dim, [])
+    #    if not isinstance(vals, list):
+    #        vals = [vals]
+    #    for v in vals:
+    #        if isinstance(data, list):
+    #            # 如果是列表，则在列表中查找包含该键的字典
+    #            entry = next((item.get(v) for item in data if isinstance(item, dict) and v in item), None)
+    #        else:
+    #            entry = data.get(v)
+    #        if entry:
+    #            texts = extract_texts_from_entry(entry)
+    #            if texts:
+    #                parts.append(" ".join(texts))
+    #fallback = " ".join(parts) if parts else "(no data available to describe user)"
+    #result = fallback.split("'description':", 1)[-1].strip(" {}'\"")
+    # result.update({"description": fallback})
+    #return result
 
 def generate_user_descriptions(n):
-    user_description = []
+    # user_description = []
     start_time = datetime.now()
     max_workers = 10
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = [executor.submit(generate_description) for _ in range(n)]
-        for i, future in enumerate(as_completed(futures)):
-            agent_desc = future.result()
-            user_description.append(agent_desc)
-            elapsed_time = datetime.now() - start_time
-            print(f"Generated {i+1}/{n} user profiles. Time elapsed: "
-                  f"{elapsed_time}")
-    return user_description
-
-def save_user_data(user_desc, filename):
-    with open(filename, 'w') as f:
-        json.dump(user_desc, f, ensure_ascii=False, indent=2)
-
+    with open("user_descriptions.csv", "w", newline='', encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["", "desc"])  # 表头
+    
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = [executor.submit(generate_description) for _ in range(n)]
+            for i, future in enumerate(as_completed(futures)):
+                agent_desc = future.result()
+                writer.writerow([i, agent_desc])
+                
+                elapsed_time = datetime.now() - start_time
+                print(f"Generated {i+1}/{n} user profiles. Time elapsed: "
+                    f"{elapsed_time}")
 
 if __name__ == "__main__":
-    N = 10  # Target user number
+    N = 5  # Target user number
     user_desc = generate_user_descriptions(N)
-    output_path = './user_desc.json'
-    save_user_data(user_desc, output_path)
-    print(f"Generated {N} user profiles and saved to {output_path}")
+    print(f"Generated {N} user profiles and saved.")
 
 
 # --------------------------
