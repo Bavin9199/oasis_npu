@@ -475,6 +475,8 @@ class Platform:
                 self.pl_utils._execute_db_command(
                     repost_check_query,
                     (post_type_result['root_post_id'], user_id))
+                insert_rec_query = "INSERT INTO rec (user_id, post_id) VALUES (?, ?)"
+                self.pl_utils._execute_db_command(insert_rec_query, (user_id, post_id), commit=True)
 
                 if self.db_cursor.fetchone():
                     # for repost post, check if the post has been reposted

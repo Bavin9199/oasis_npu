@@ -40,10 +40,14 @@ from oasis.social_platform.channel import Channel
 from oasis.social_platform.platform import Platform
 from oasis.social_platform.typing import ActionType
 
+os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_BASE_URL"] = "https://openrouter.ai/api/v1"
+
 social_log = logging.getLogger(name="social")
 social_log.propagate = False
 social_log.setLevel("DEBUG")
-now = datetime.now()
+os.makedirs("./log", exist_ok=True)
+now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 file_handler = logging.FileHandler(f"./log/social-{str(now)}.log",
                                    encoding="utf-8")
 file_handler.setLevel("DEBUG")
@@ -145,7 +149,7 @@ async def running(
             available_actions=available_actions,
             model=models,
         )
-    with open(pair_path, "r") as f:
+    with open(pair_path, "r" , encoding="utf-8") as f:
         pairs = json.load(f)
 
     for timestep in range(num_timesteps):

@@ -82,6 +82,9 @@ async def generate_agents(
         }
         profile["other_info"]["user_profile"] = agent_info["user_char"][
             agent_id]
+        # TODO if you simulate one million agents, use active threshold below.
+        profile['other_info']['active_threshold'] = [0.01] * 24
+        
 
         user_info = UserInfo(
             name=agent_info["username"][agent_id],
@@ -236,7 +239,7 @@ async def generate_agents_100w(
         profile["other_info"]["user_profile"] = agent_info["user_char"][
             agent_id]
         # TODO if you simulate one million agents, use active threshold below.
-        # profile['other_info']['active_threshold'] = [0.01] * 24
+        profile['other_info']['active_threshold'] = [0.01] * 24
 
         user_info = UserInfo(
             name=agent_info["username"][agent_id],
@@ -446,7 +449,7 @@ async def generate_reddit_agents(
 
     control_user_num = agent_graph.get_num_nodes()
 
-    with open(agent_info_path, "r") as file:
+    with open(agent_info_path, "r" , encoding="utf-8") as file:
         agent_info = json.load(file)
 
     async def process_agent(i):
@@ -461,7 +464,8 @@ async def generate_reddit_agents(
         profile["other_info"]["mbti"] = agent_info[i]["mbti"]
         profile["other_info"]["gender"] = agent_info[i]["gender"]
         profile["other_info"]["age"] = agent_info[i]["age"]
-        profile["other_info"]["country"] = agent_info[i]["country"]
+        #profile["other_info"]["country"] = agent_info[i]["country"]
+        profile["other_info"]["identify"] = agent_info[i]["identify"]
 
         user_info = UserInfo(
             name=agent_info[i]["username"],

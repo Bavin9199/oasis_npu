@@ -30,6 +30,9 @@ from camel.types import ModelPlatformType
 from colorama import Back
 from yaml import safe_load
 
+os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_BASE_URL"] = "https://openrouter.ai/api/v1"
+
 scripts_dir = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(scripts_dir)
@@ -74,6 +77,7 @@ DEFAULT_CSV_PATH = os.path.join(DATA_DIR, "False_Business_0.csv")
 
 
 async def running(
+    desc_path: str,
     db_path: str | None = DEFAULT_DB_PATH,
     csv_path: str | None = DEFAULT_CSV_PATH,
     num_timesteps: int = 3,
@@ -116,7 +120,7 @@ async def running(
         ) for url in model_urls
     ]
     try:
-        all_topic_df = pd.read_csv("data/twitter_dataset/all_topics.csv")
+        all_topic_df = pd.read_csv("E:/NPU/P0/OASIS/oasis/data/twitter_dataset/all_topics.csv")
         if "False" in csv_path or "True" in csv_path:
             if "-" not in csv_path:
                 topic_name = csv_path.split("/")[-1].split(".")[0]
@@ -133,15 +137,16 @@ async def running(
         start_hour = 13
 
     model_configs = model_configs or {}
-
-    agent_graph = await generate_agents(agent_info_path=csv_path,
+    
+    agent_graph = await generate_agents(agent_desc_path=desc_path,
+                                        agent_info_path=csv_path,
                                         channel=twitter_channel,
                                         start_time=start_time,
                                         model=models,
                                         recsys_type=recsys_type,
                                         available_actions=available_actions,
                                         twitter=infra)
-    # agent_graph.visualize("initial_social_graph.png")
+    agent_graph.visualize("initial_social_graph.png")
 
     for timestep in range(1, num_timesteps + 1):
         clock.time_step = timestep * 3
@@ -157,8 +162,7 @@ async def running(
         for node_id, agent in agent_graph.get_agents():
             if agent.user_info.is_controllable is False:
                 agent_ac_prob = random.random()
-                threshold = agent.user_info.profile["other_info"][
-                    "active_threshold"][int(simulation_time_hour % 24)]
+                threshold = agent.user_info.profile["other_info"]["active_threshold"][0]
                 if agent_ac_prob < threshold:
                     tasks.append(agent.perform_action_by_llm())
             else:

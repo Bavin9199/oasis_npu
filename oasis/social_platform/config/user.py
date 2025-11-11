@@ -95,7 +95,8 @@ Please perform actions by tool calling.
                     f"You are a {self.profile['other_info']['gender']}, "
                     f"{self.profile['other_info']['age']} years old, with an MBTI "
                     f"personality type of {self.profile['other_info']['mbti']} from "
-                    f"{self.profile['other_info']['country']}.")
+                    f"{self.profile['other_info']['country']}. "
+                    f"Your identify is {self.profile['other_info']['identify']}.")
 
         system_content = f"""
 # OBJECTIVE

@@ -39,8 +39,12 @@ async def fetch_gpt_score(session, prompt, time_step, post_content,
                           comment_content):
     try:
         response = await session.post(
-            "https://api.openai.com/v1/chat/completions",
-            headers={"Authorization": f"Bearer {openai.api_key}"},
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={
+            "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}",  # 使用环境变量方式更安全
+            "HTTP-Referer": "https://openrouter.ai",   # ✅ OpenRouter 要求
+            "X-Title": "OASIS-Research"                # ✅ 建议加上项目名
+            },
             json={
                 "model":
                 "gpt-4o",

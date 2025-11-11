@@ -1,0 +1,102 @@
+[
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "What local experience has left a lasting impression on you during your travels?"
+    },
+    "RC_1": {
+      "body": "Exploring the hidden gardens of Marrakech taught me that peace often comes from unexpected places.",
+      "group": "up"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "How do you maintain meaningful connections in a fast-paced city?"
+    },
+    "RC_1": {
+      "body": "I make it a point to have weekly coffee meetups with friends — small rituals preserve relationships.",
+      "group": "control"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "What is one cultural practice you encountered that challenged your assumptions?"
+    },
+    "RC_1": {
+      "body": "In rural Japan, bowing is more than a greeting — it reflects deep respect and patience.",
+      "group": "up"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "Do you think technological innovation always improves hospitality?"
+    },
+    "RC_1": {
+      "body": "Not necessarily. Technology helps, but genuine human interaction remains irreplaceable.",
+      "group": "control"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "What’s your most memorable culinary experience abroad?"
+    },
+    "RC_1": {
+      "body": "Learning to make pasta with a local family in Tuscany — the simplicity and warmth made it unforgettable.",
+      "group": "up"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "How do you handle unexpected challenges while traveling?"
+    },
+    "RC_1": {
+      "body": "I stay calm and ask locals for advice — most people are willing to help if you show respect.",
+      "group": "down"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "What future trends do you foresee in sustainable tourism?"
+    },
+    "RC_1": {
+      "body": "Electric ferries and eco-lodges could redefine travel, reducing our carbon footprint significantly.",
+      "group": "up"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "How has traveling influenced your personal growth?"
+    },
+    "RC_1": {
+      "body": "It taught me patience and adaptability — every new place offers lessons beyond sightseeing.",
+      "group": "up"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "Have you ever struggled with language barriers? How did you cope?"
+    },
+    "RC_1": {
+      "body": "Yes, in rural France. I relied on gestures, smiling, and a dictionary — kindness goes a long way.",
+      "group": "down"
+    }
+  },
+  {
+    "RS": {
+      "title": "None",
+      "selftext": "Do you travel to escape routine or to find yourself?"
+    },
+    "RC_1": {
+      "body": "For me, it’s self-discovery. Even if you start with an escape, you often end up learning something new about yourself.",
+      "group": "up"
+    }
+  }
+]

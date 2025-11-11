@@ -21,6 +21,8 @@ import oasis
 from oasis import (ActionType, AgentGraph, LLMAction, ManualAction,
                    SocialAgent, UserInfo)
 
+os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_BASE_URL"] = "https://openrouter.ai/api/v1"
 
 async def main():
     # Define the model for the agents

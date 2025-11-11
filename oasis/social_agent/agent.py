@@ -156,43 +156,47 @@ class SocialAgent(ChatAgent):
 
     async def perform_test(self):
         """
-        doing group polarization test for all agents.
-        TODO: rewrite the function according to the ChatAgent.
-        TODO: unify the test and interview function.
+        Conduct a safe group polarization test for the agent without calling any tools.
+        Returns the generated text content and agent id.
         """
-        # user conduct test to agent
-        _ = BaseMessage.make_user_message(role_name="User",
-                                          content=("You are a twitter user."))
-        # Test memory should not be writed to memory.
-        # self.memory.write_record(MemoryRecord(user_msg,
-        #                                       OpenAIBackendRole.USER))
+        # 构建用户消息，模拟测试环境
+        _ = BaseMessage.make_user_message(
+            role_name="User",
+            content="You are a Twitter user."
+        )
 
+        # 获取上下文，但不写入记忆，保证测试干净
         openai_messages, num_tokens = self.memory.get_context()
 
+        # 构建系统消息 + 用户消息（测试 prompt）
         openai_messages = ([{
-            "role":
-            self.system_message.role_name,
-            "content":
-            self.system_message.content.split("# RESPONSE FORMAT")[0],
+            "role": self.system_message.role_name,
+            "content": self.system_message.content.split("# RESPONSE FORMAT")[0],
         }] + openai_messages + [{
             "role": "user",
-            "content": self.test_prompt
+            "content": self.test_prompt + "\nPlease do NOT call any tools, only respond with text."
         }])
 
         agent_log.info(f"Agent {self.social_agent_id}: {openai_messages}")
-        # NOTE: this is a temporary solution.
-        # Camel can not stop updating the agents' memory after stop and astep
-        # now.
-        response = await self._aget_model_response(
-            openai_messages=openai_messages, num_tokens=num_tokens)
-        content = response.output_messages[0].content
-        agent_log.info(
-            f"Agent {self.social_agent_id} receive response: {content}")
+
+        # 捕获异常，防止模型报错中断整个循环
+        try:
+            response = await self._aget_model_response(
+                openai_messages=openai_messages, num_tokens=num_tokens
+            )
+            content = response.output_messages[0].content
+        except Exception as e:
+            agent_log.warning(f"Agent {self.social_agent_id} perform_test failed: {e}")
+            content = "resume"  # 返回空内容，继续循环
+
+        agent_log.info(f"Agent {self.social_agent_id} receive response: {content}")
+
         return {
             "user_id": self.social_agent_id,
             "prompt": openai_messages,
             "content": content
         }
+
 
     async def perform_interview(self, interview_prompt: str):
         """

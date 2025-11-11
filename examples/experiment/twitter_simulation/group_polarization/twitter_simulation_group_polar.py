@@ -32,6 +32,8 @@ from yaml import safe_load
 scripts_dir = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(scripts_dir)
+
+sys.stdout.reconfigure(encoding='utf-8')
 from utils import create_model_urls
 
 from oasis.clock.clock import Clock
@@ -39,6 +41,12 @@ from oasis.social_agent.agents_generator import generate_agents_100w
 from oasis.social_platform.channel import Channel
 from oasis.social_platform.platform import Platform
 from oasis.social_platform.typing import ActionType
+
+
+os.environ["OPENROUTER_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = os.environ["OPENROUTER_API_KEY"]  # 兼容 CAMEL
+os.environ["OPENAI_BASE_URL"] = "https://openrouter.ai/api/v1"
+
 
 social_log = logging.getLogger(name='social')
 social_log.propagate = False
@@ -151,12 +159,12 @@ async def running(
         print(Back.GREEN + f"DB:{db_file} timestep:{timestep}" + Back.RESET)
         print(Back.YELLOW + "doing test" + Back.RESET)
 
-        if (timestep - 1) % 10 == 0:
+        if (timestep - 1) % 20 == 0:
             test_results_list = []
             # TODO adaptive number of test agents
             test_tasks = [
                 agent.perform_test() for agent in agent_graph
-                if agent.social_agent_id < 10
+                if agent.social_agent_id < 20
             ]
             test_results = await asyncio.gather(*test_tasks)
             for result in test_results:
@@ -175,7 +183,7 @@ async def running(
             if agent.user_info.is_controllable is False:
                 agent_ac_prob = random.random()
                 threshold = agent.user_info.profile['other_info'][
-                    'active_threshold'][int(simulation_time_hour % 24)]
+                    'active_threshold'][0]
                 if agent.social_agent_id < 10:
                     if agent_ac_prob < 0.1:
                         tasks.append(agent.perform_action_by_llm())
@@ -196,7 +204,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     os.environ["SANDBOX_TIME"] = str(0)
     if os.path.exists(args.config_path):
-        with open(args.config_path, "r") as f:
+        with open(args.config_path, "r", encoding="utf-8") as f:
             cfg = safe_load(f)
         data_params = cfg.get("data")
         simulation_params = cfg.get("simulation")
