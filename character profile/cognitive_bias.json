@@ -1,0 +1,107 @@
+{
+  "anchoring_bias": {
+    "name": "Anchoring Bias",
+    "description": "The tendency to rely too heavily on the first piece of information encountered when making decisions.",
+    "example": "A person thinks a $1000 jacket is cheap after seeing one priced at $5000."
+  },
+  "confirmation_bias": {
+    "name": "Confirmation Bias",
+    "description": "Favoring information that confirms preexisting beliefs or values.",
+    "example": "Reading only news that supports one's political opinion."
+  },
+  "availability_heuristic": {
+    "name": "Availability Heuristic",
+    "description": "Overestimating the importance of information that is easily recalled.",
+    "example": "Fearing plane crashes more than car accidents due to media coverage."
+  },
+  "bandwagon_effect": {
+    "name": "Bandwagon Effect",
+    "description": "Adopting beliefs or behaviors because many other people do.",
+    "example": "Buying a trending product because everyone else does."
+  },
+  "status_quo_bias": {
+    "name": "Status Quo Bias",
+    "description": "Preferring things to stay the same rather than change.",
+    "example": "Keeping an old subscription instead of switching to a better one."
+  },
+  "self_serving_bias": {
+    "name": "Self-Serving Bias",
+    "description": "Attributing success to personal skill and failure to external factors.",
+    "example": "Blaming the weather for losing a tennis match but taking credit for wins."
+  },
+  "fundamental_attribution_error": {
+    "name": "Fundamental Attribution Error",
+    "description": "Overemphasizing personal traits while underestimating situational factors when judging others.",
+    "example": "Assuming someone is lazy because they are late, without knowing the context."
+  },
+  "halo_effect": {
+    "name": "Halo Effect",
+    "description": "Letting one positive trait influence overall perception.",
+    "example": "Thinking an attractive person is also intelligent and kind."
+  },
+  "horn_effect": {
+    "name": "Horn Effect",
+    "description": "Letting one negative trait influence overall judgment.",
+    "example": "Disliking someone entirely because of a single rude remark."
+  },
+  "in_group_bias": {
+    "name": "In-group Bias",
+    "description": "Favoring members of one's own group over outsiders.",
+    "example": "Hiring someone from the same university instead of a more qualified candidate."
+  },
+  "optimism_bias": {
+    "name": "Optimism Bias",
+    "description": "Believing that you are less likely to experience negative events.",
+    "example": "Underestimating the chance of getting sick."
+  },
+  "pessimism_bias": {
+    "name": "Pessimism Bias",
+    "description": "Overestimating the likelihood of negative outcomes.",
+    "example": "Believing a project will fail despite strong preparation."
+  },
+  "negativity_bias": {
+    "name": "Negativity Bias",
+    "description": "Giving more weight to negative experiences than positive ones.",
+    "example": "Focusing on one bad review among dozens of good ones."
+  },
+  "recency_bias": {
+    "name": "Recency Bias",
+    "description": "Giving greater importance to the most recent information.",
+    "example": "Thinking a stock will keep rising because it has risen recently."
+  },
+  "sunk_cost_fallacy": {
+    "name": "Sunk Cost Fallacy",
+    "description": "Continuing an endeavor because of previously invested resources.",
+    "example": "Finishing a bad movie because you already paid for the ticket."
+  },
+  "overconfidence_bias": {
+    "name": "Overconfidence Bias",
+    "description": "Overestimating one's own abilities or knowledge.",
+    "example": "Believing one drives better than most people."
+  },
+  "dunning_kruger_effect": {
+    "name": "Dunning-Kruger Effect",
+    "description": "People with low ability at a task overestimate their ability.",
+    "example": "A novice believing they can perform like an expert."
+  },
+  "false_consensus_effect": {
+    "name": "False Consensus Effect",
+    "description": "Overestimating how much others share your beliefs or behaviors.",
+    "example": "Assuming everyone enjoys the same type of movies."
+  },
+  "survivorship_bias": {
+    "name": "Survivorship Bias",
+    "description": "Focusing on successes while ignoring failures.",
+    "example": "Studying successful entrepreneurs without examining those who failed."
+  },
+  "illusion_of_control": {
+    "name": "Illusion of Control",
+    "description": "Believing you can control or influence outcomes that you cannot.",
+    "example": "Believing your lucky charm affects an exam result."
+  },
+  "just_world_hypothesis": {
+    "name": "Just-World Hypothesis",
+    "description": "Believing the world is fair and people get what they deserve.",
+    "example": "Assuming poor people must have made bad choices."
+  }
+}

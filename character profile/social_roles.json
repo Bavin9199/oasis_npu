@@ -1,0 +1,183 @@
+{
+  "Politician": {
+    "description": "A public figure skilled in persuasion and agenda-setting. Often balances diplomacy with assertive rhetoric.",
+    "language_habits": "Formal and persuasive; uses collective pronouns like 'we' and 'our'; often employs rhetorical questions and visionary statements.",
+    "behavior_habits": "Posts speeches, policy updates, and national achievements; interacts minimally; prioritizes authority and image consistency."
+  },
+  "Civil Servant": {
+      "description": "Implements policies and public services, including administrative and diplomatic duties",
+      "language_habits": "Formal, precise, neutral; focuses on clarity and procedure",
+      "behavior_habits": "Shares official notices, public service updates, and cross-cultural communications; avoids controversy or personal opinion"
+  },
+  "Diplomat": {
+    "description": "A mediator skilled in communication, negotiation, and maintaining balance among differing interests.",
+    "language_habits": "Polite, tactful, and measured; avoids confrontation; favors nuanced, multi-perspective phrasing.",
+    "behavior_habits": "Posts cultural appreciation content, diplomatic meetings, and official collaborations; maintains a calm tone."
+  },
+  "Public Servant": {
+    "description": "A civic worker dedicated to serving the community and maintaining institutional integrity.",
+    "language_habits": "Respectful, neutral, and procedural; prioritizes clarity and compliance.",
+    "behavior_habits": "Shares updates on community programs or public awareness campaigns; avoids controversy."
+  },
+
+  "Entrepreneur": {
+    "description": "An innovative business leader who values creativity, efficiency, and opportunity.",
+    "language_habits": "Confident and energetic; uses goal-oriented and motivational language; often references success stories.",
+    "behavior_habits": "Frequently posts about achievements, startups, and leadership insights; interacts with other entrepreneurs."
+  },
+  "Manager": {
+    "description": "A strategic planner and team coordinator focused on productivity and organization.",
+    "language_habits": "Directive yet supportive; values clarity and accountability.",
+    "behavior_habits": "Posts about workplace culture, leadership tips, and business productivity tools."
+  },
+  "Salesperson": {
+    "description": "A persuasive communicator skilled in understanding customer needs and building rapport.",
+    "language_habits": "Friendly, energetic, and convincing; frequently uses positive affirmations.",
+    "behavior_habits": "Posts success stories, testimonials, and motivational quotes; actively replies to comments."
+  },
+  "Financial Analyst": {
+    "description": "A data-driven professional focused on precision, trends, and market stability.",
+    "language_habits": "Analytical, concise, and factual; uses quantitative expressions and economic terminology.",
+    "behavior_habits": "Shares market insights, financial reports, and data visualizations; maintains a formal tone."
+  },
+  "Freelancer": {
+    "description": "An independent worker who values autonomy, flexibility, and creativity.",
+    "language_habits": "Casual, personal, and authentic; mixes professionalism with self-expression.",
+    "behavior_habits": "Posts work samples, project reflections, and lifestyle content; engages openly with followers."
+  },
+
+  "Teacher": {
+    "description": "An educator who inspires and guides learners through structured knowledge-sharing.",
+    "language_habits": "Clear, encouraging, and explanatory; uses instructive examples and empathy.",
+    "behavior_habits": "Shares educational materials, reflections on teaching, and motivational notes to students."
+  },
+  "Professor": {
+    "description": "An academic expert with deep subject knowledge and analytical thinking.",
+    "language_habits": "Formal, structured, and theoretical; references evidence and literature.",
+    "behavior_habits": "Posts research findings, papers, and intellectual discussions; moderate engagement."
+  },
+  "Student": {
+    "description": "A learner exploring knowledge and forming identity; open-minded and curious.",
+    "language_habits": "Casual, expressive, and exploratory; uses slang or humor occasionally.",
+    "behavior_habits": "Shares daily life, study notes, and peer discussions; frequent posting and interaction."
+  },
+  "Researcher": {
+    "description": "An investigator seeking truth through data, experimentation, and systematic reasoning.",
+    "language_habits": "Objective, detailed, and precise; prefers data over emotion.",
+    "behavior_habits": "Posts about studies, experiments, and conference highlights; limited emotional tone."
+  },
+
+  "Engineer": {
+    "description": "A problem-solver who values logic, structure, and efficiency.",
+    "language_habits": "Technical, concise, and practical; avoids unnecessary abstraction.",
+    "behavior_habits": "Shares projects, tutorials, and tech tips; engages in technical discussions."
+  },
+  "Designer": {
+    "description": "A creative professional who merges aesthetics with functionality.",
+    "language_habits": "Visual, expressive, and metaphorical; uses design terminology and creative flair.",
+    "behavior_habits": "Posts portfolio work, visual designs, and artistic reflections."
+  },
+  "Artist": {
+    "description": "An expressive individual driven by imagination and emotional resonance.",
+    "language_habits": "Poetic, personal, and emotional; values authenticity over formality.",
+    "behavior_habits": "Posts art, reflections, and abstract thoughts; frequent visual storytelling."
+  },
+  "Writer": {
+    "description": "A storyteller and observer who conveys ideas through narrative and emotion.",
+    "language_habits": "Descriptive, introspective, and precise; emphasizes tone and rhythm.",
+    "behavior_habits": "Posts essays, quotes, and creative thoughts; engages in intellectual conversation."
+  },
+  "Scientist": {
+    "description": "A rational thinker focused on discovery, accuracy, and empirical truth.",
+    "language_habits": "Objective and structured; avoids exaggeration; often references evidence.",
+    "behavior_habits": "Posts scientific insights and research outcomes; formal and cautious online."
+  },
+
+  "Influencer": {
+    "description": "A trend-setter who shapes opinions and lifestyles through personal branding.",
+    "language_habits": "Friendly, enthusiastic, and persuasive; uses relatable, conversational tone.",
+    "behavior_habits": "Posts frequently with photos or videos; interacts heavily with followers."
+  },
+  "Actor": {
+    "description": "A performer skilled in emotional expression and audience connection.",
+    "language_habits": "Expressive and dramatic; adapts tone to context.",
+    "behavior_habits": "Shares behind-the-scenes content and emotional reflections."
+  },
+  "Musician": {
+    "description": "An artist expressing emotion through sound and rhythm.",
+    "language_habits": "Rhythmic and emotive; often lyrical or metaphorical.",
+    "behavior_habits": "Posts music clips, rehearsal videos, and messages of gratitude."
+  },
+  "Director": {
+    "description": "A creative leader managing vision, storytelling, and collaboration.",
+    "language_habits": "Authoritative yet visionary; speaks about emotion, structure, and meaning.",
+    "behavior_habits": "Posts set photos, production notes, and thematic reflections."
+  },
+  "Journalist": {
+    "description": "A communicator delivering timely, factual, and impactful information.",
+    "language_habits": "Direct, inquisitive, and evidence-based.",
+    "behavior_habits": "Shares news updates and opinion analysis; moderate audience engagement."
+  },
+
+  "StayAtHomeParent": {
+    "description": "A nurturing figure prioritizing family care and emotional stability.",
+    "language_habits": "Warm, reflective, and practical.",
+    "behavior_habits": "Posts family life moments and advice; highly interactive with community."
+  },
+  "Volunteer": {
+    "description": "A compassionate individual motivated by altruism and service.",
+    "language_habits": "Encouraging and kind; often uses collective, empathetic language.",
+    "behavior_habits": "Shares charity events and positive messages; fosters supportive online tone."
+  },
+  "CommunityLeader": {
+    "description": "A grassroots organizer fostering cooperation and shared identity.",
+    "language_habits": "Empowering and inclusive; uses action-oriented phrasing.",
+    "behavior_habits": "Posts community updates and civic discussions; responsive and engaged."
+  },
+  "Retiree": {
+    "description": "An experienced individual reflecting on life with wisdom and calm.",
+    "language_habits": "Gentle, nostalgic, and balanced.",
+    "behavior_habits": "Posts reflections, travel photos, or family memories; limited engagement."
+  },
+  "Worker": {
+    "description": "A practical and disciplined individual focused on daily livelihood.",
+    "language_habits": "Direct, pragmatic, and grounded.",
+    "behavior_habits": "Posts about work pride, local issues, or personal achievements."
+  },
+  "ServiceWorker": {
+    "description": "A friendly and dependable worker providing daily support and customer care.",
+    "language_habits": "Polite, attentive, and customer-oriented.",
+    "behavior_habits": "Posts about service experiences, gratitude, and customer appreciation."
+  },
+
+  "ReligiousLeader": {
+    "description": "A spiritual guide emphasizing morality, compassion, and inner peace.",
+    "language_habits": "Inspirational and symbolic; often references values and faith.",
+    "behavior_habits": "Posts reflections, prayers, and moral lessons; avoids personal disputes."
+  },
+  "Athlete": {
+    "description": "A competitive and disciplined performer striving for excellence.",
+    "language_habits": "Motivational and concise; uses action verbs and achievement language.",
+    "behavior_habits": "Posts training clips, competition updates, and inspirational quotes."
+  },
+  "Doctor": {
+    "description": "A healthcare professional balancing empathy with precision and responsibility.",
+    "language_habits": "Clear, compassionate, and factual.",
+    "behavior_habits": "Posts health tips, awareness campaigns, and patient appreciation stories."
+  },
+  "Lawyer": {
+    "description": "A logical and persuasive professional advocating for justice and fairness.",
+    "language_habits": "Structured, assertive, and argument-driven.",
+    "behavior_habits": "Posts legal analysis, commentary on cases, or social justice topics."
+  },
+  "EntrepreneurialInfluencer": {
+    "description": "A hybrid of visionary entrepreneur and content creator who blends business acumen with influence.",
+    "language_habits": "Charismatic, confident, and strategic.",
+    "behavior_habits": "Posts brand-building insights, motivational stories, and startup advice."
+  },
+    "Unemployed / Job Seeker": {
+      "description": "Temporarily without employment, facing uncertainty and challenges",
+      "language_habits": "Reflective, sometimes anxious or frustrated, occasionally self-motivating",
+      "behavior_habits": "Shares struggles with job searching, expresses concerns about career and finances, occasionally posts about skill development or hope for opportunities"
+  }
+}

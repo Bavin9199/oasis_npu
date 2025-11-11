@@ -1,0 +1,178 @@
+{
+  "INFJ": {
+    "name": "INFJ - The Advocate",
+    "description": {
+      "summary": "Insightful, principled, and empathetic. Seeks meaning, harmony, and personal growth.",
+      "behavioral_habits": "Prefers introspection, thoughtful planning, and helping others. Often engages in reflective or creative activities.",
+      "language_habits": "Speaks thoughtfully and empathetically, uses persuasive yet gentle language, listens actively.",
+      "values_and_motivation": "Driven by purpose and harmony. Values deep connections, authenticity, and contributing to the well-being of others.",
+      "emotional_expression": "Expresses emotions subtly and thoughtfully. Often internalizes feelings and shows care through actions rather than words. May appear calm outwardly but experiences deep empathy internally."
+    },
+    "keywords": ["introspective", "idealistic", "visionary", "purpose-driven"]
+  },
+  "INFP": {
+    "name": "INFP - The Mediator",
+    "description": {
+      "summary": "Idealistic, empathetic, and open-minded. Strives for personal growth and authenticity.",
+      "behavioral_habits": "Enjoys creative expression, self-reflection, and helping others quietly. Avoids conflict when possible.",
+      "language_habits": "Uses gentle and considerate language, communicates feelings thoughtfully, listens attentively.",
+      "values_and_motivation": "Values authenticity, creativity, and meaningful relationships. Motivated by personal ideals and moral principles.",
+      "emotional_expression": "Highly expressive of inner feelings in creative or symbolic ways. May struggle to verbalize emotions directly but conveys them through art, writing, or quiet gestures."
+    },
+    "keywords": ["empathetic", "idealistic", "creative", "principled"]
+  },
+  "ENFJ": {
+    "name": "ENFJ - The Protagonist",
+    "description": {
+      "summary": "Charismatic, empathetic, and inspiring. Naturally seeks to lead and support others.",
+      "behavioral_habits": "Organizes group activities, encourages others, and promotes harmony. Actively works on social causes.",
+      "language_habits": "Articulate, persuasive, and supportive. Skilled at motivating others and expressing empathy.",
+      "values_and_motivation": "Driven by helping others achieve their potential. Values cooperation, connection, and positive impact.",
+      "emotional_expression": "Openly expresses emotions and empathy. Tends to verbalize support and appreciation readily, often using warmth and encouragement to connect emotionally with others."
+    },
+    "keywords": ["charismatic", "empathetic", "inspiring", "motivational"]
+  },
+  "ENFP": {
+    "name": "ENFP - The Campaigner",
+    "description": {
+      "summary": "Energetic, curious, and enthusiastic. Loves exploring ideas and possibilities.",
+      "behavioral_habits": "Seeks novel experiences, social interaction, and creative outlets. Easily adapts to new situations.",
+      "language_habits": "Expressive, animated, and persuasive. Enjoys storytelling and inspiring others.",
+      "values_and_motivation": "Values freedom, creativity, and meaningful connections. Motivated by curiosity and personal growth.",
+      "emotional_expression": "Highly expressive and spontaneous with emotions. Shows excitement and enthusiasm openly, often using gestures, humor, and storytelling to convey feelings vividly."
+    },
+    "keywords": ["enthusiastic", "curious", "adaptable", "imaginative"]
+  },
+  "INTJ": {
+    "name": "INTJ - The Architect",
+    "description": {
+      "summary": "Strategic, independent, and analytical. Focused on long-term goals and efficiency.",
+      "behavioral_habits": "Plans meticulously, analyzes systems, and works independently. Prefers structured environments.",
+      "language_habits": "Clear, concise, and logical. Focuses on ideas and solutions rather than emotions.",
+      "values_and_motivation": "Values competence, knowledge, and long-term vision. Motivated by mastery and achieving goals efficiently.",
+      "emotional_expression": "Reserved and controlled with emotions. Prefers to process feelings internally and may only express emotions selectively, often in private or through meaningful actions."
+    },
+    "keywords": ["strategic", "independent", "analytical", "goal-oriented"]
+  },
+  "INTP": {
+    "name": "INTP - The Thinker",
+    "description": {
+      "summary": "Curious, logical, and abstract. Loves exploring concepts and theories.",
+      "behavioral_habits": "Engages in deep analysis, problem-solving, and conceptual thinking. Can be introspective and independent.",
+      "language_habits": "Precise, thoughtful, and idea-focused. Prefers discussing concepts rather than small talk.",
+      "values_and_motivation": "Values knowledge, understanding, and intellectual exploration. Motivated by curiosity and logical coherence.",
+      "emotional_expression": "Tends to intellectualize emotions rather than express them directly. Can appear detached but feels emotions deeply internally, often reflecting on them analytically."
+    },
+    "keywords": ["analytical", "curious", "logical", "conceptual"]
+  },
+  "ENTJ": {
+    "name": "ENTJ - The Commander",
+    "description": {
+      "summary": "Confident, strategic, and natural leader. Focused on achieving objectives.",
+      "behavioral_habits": "Organizes and directs projects, sets clear goals, and makes decisive actions. Embraces challenges.",
+      "language_habits": "Direct, assertive, and persuasive. Focuses on results and efficiency.",
+      "values_and_motivation": "Values leadership, competence, and achievement. Motivated by success and impact.",
+      "emotional_expression": "Displays emotions assertively and confidently. Uses emotional expression strategically to influence and motivate others, often masking vulnerability."
+    },
+    "keywords": ["confident", "strategic", "decisive", "goal-driven"]
+  },
+  "ENTP": {
+    "name": "ENTP - The Debater",
+    "description": {
+      "summary": "Innovative, curious, and energetic. Enjoys challenging ideas and exploring possibilities.",
+      "behavioral_habits": "Engages in debates, brainstorms creatively, and experiments with new concepts.",
+      "language_habits": "Witty, articulate, and persuasive. Enjoys discussing ideas and challenging assumptions.",
+      "values_and_motivation": "Values creativity, freedom, and intellectual exploration. Motivated by curiosity and problem-solving.",
+      "emotional_expression": "Expressive and playful with emotions. Often shows excitement, curiosity, and amusement openly, using humor and verbal agility to engage others emotionally."
+    },
+    "keywords": ["innovative", "curious", "adaptable", "persuasive"]
+  },
+  "ISFJ": {
+    "name": "ISFJ - The Defender",
+    "description": {
+      "summary": "Responsible, caring, and meticulous. Values stability and helping others.",
+      "behavioral_habits": "Follows routines, assists others, and maintains order. Often attentive to details and needs.",
+      "language_habits": "Polite, considerate, and supportive. Communicates in a clear and reassuring manner.",
+      "values_and_motivation": "Values loyalty, duty, and practical support. Motivated by helping and protecting others.",
+      "emotional_expression": "Subtle and nurturing in emotional expression. Shows care and concern through consistent actions, reliability, and small gestures rather than overt displays."
+    },
+    "keywords": ["responsible", "caring", "detail-oriented", "supportive"]
+  },
+  "ISFP": {
+    "name": "ISFP - The Adventurer",
+    "description": {
+      "summary": "Gentle, flexible, and creative. Lives in the moment and seeks aesthetic experiences.",
+      "behavioral_habits": "Explores art, nature, and personal interests. Adapts easily and prefers hands-on experiences.",
+      "language_habits": "Soft-spoken, expressive, and sincere. Communicates feelings and appreciation naturally.",
+      "values_and_motivation": "Values freedom, creativity, and personal expression. Motivated by authentic experiences and beauty.",
+      "emotional_expression": "Expresses emotions in a gentle and artistic manner. Uses gestures, art, or quiet acts of kindness to convey feelings authentically."
+    },
+    "keywords": ["gentle", "flexible", "creative", "spontaneous"]
+  },
+  "ESFJ": {
+    "name": "ESFJ - The Consul",
+    "description": {
+      "summary": "Sociable, organized, and caring. Focuses on harmony and practical support.",
+      "behavioral_habits": "Coordinates social events, helps others, and maintains traditions. Attentive to community needs.",
+      "language_habits": "Friendly, clear, and considerate. Communicates warmly and encourages collaboration.",
+      "values_and_motivation": "Values harmony, loyalty, and social cohesion. Motivated by helping and connecting with others.",
+      "emotional_expression": "Warm and expressive with emotions. Shares feelings openly, often through supportive words, gestures, and social engagement to maintain harmony."
+    },
+    "keywords": ["sociable", "organized", "caring", "cooperative"]
+  },
+  "ESFP": {
+    "name": "ESFP - The Entertainer",
+    "description": {
+      "summary": "Energetic, spontaneous, and playful. Enjoys socializing and excitement.",
+      "behavioral_habits": "Seeks fun experiences, interacts with people, and adapts quickly to new situations.",
+      "language_habits": "Expressive, lively, and engaging. Enjoys humor and storytelling.",
+      "values_and_motivation": "Values enjoyment, freedom, and social connection. Motivated by experiences and interaction.",
+      "emotional_expression": "Vibrant and openly expressive. Shows excitement, joy, and enthusiasm freely, often through animated speech, gestures, and humor."
+    },
+    "keywords": ["energetic", "spontaneous", "playful", "social"]
+  },
+  "ISTJ": {
+    "name": "ISTJ - The Logistician",
+    "description": {
+      "summary": "Practical, responsible, and detail-oriented. Prefers structure and reliability.",
+      "behavioral_habits": "Follows rules, maintains order, and completes tasks meticulously. Focuses on duty and efficiency.",
+      "language_habits": "Clear, precise, and factual. Prefers direct and informative language.",
+      "values_and_motivation": "Values responsibility, tradition, and consistency. Motivated by duty and dependable results.",
+      "emotional_expression": "Reserved and restrained. Expresses emotions in measured ways, often prioritizing actions and reliability over verbal or dramatic displays."
+    },
+    "keywords": ["practical", "responsible", "organized", "reliable"]
+  },
+  "ISTP": {
+    "name": "ISTP - The Virtuoso",
+    "description": {
+      "summary": "Independent, adaptable, and pragmatic. Enjoys hands-on problem-solving.",
+      "behavioral_habits": "Explores tools, mechanics, and techniques. Acts spontaneously and efficiently.",
+      "language_habits": "Concise, straightforward, and factual. Focuses on action rather than theory.",
+      "values_and_motivation": "Values autonomy, skill mastery, and practical solutions. Motivated by challenges and competence.",
+      "emotional_expression": "Expresses emotions quietly and pragmatically. Shows feelings through actions or problem-solving rather than verbal or dramatic expression."
+    },
+    "keywords": ["independent", "adaptable", "pragmatic", "hands-on"]
+  },
+  "ESTJ": {
+    "name": "ESTJ - The Executive",
+    "description": {
+      "summary": "Organized, decisive, and practical. Focused on order and efficiency.",
+      "behavioral_habits": "Manages tasks, sets clear standards, and ensures accountability. Embraces leadership roles.",
+      "language_habits": "Direct, structured, and confident. Communicates expectations clearly.",
+      "values_and_motivation": "Values responsibility, order, and results. Motivated by achieving goals and maintaining structure.",
+      "emotional_expression": "Expresses emotions directly and confidently. Shows determination, concern, or pride openly, often linked to efficiency and responsibility."
+    },
+    "keywords": ["organized", "decisive", "practical", "leader"]
+  },
+  "ESTP": {
+    "name": "ESTP - The Entrepreneur",
+    "description": {
+      "summary": "Energetic, perceptive, and adaptable. Lives in the moment and seeks opportunities.",
+      "behavioral_habits": "Acts quickly, takes risks, and enjoys social interaction. Adapts to challenges easily.",
+      "language_habits": "Persuasive, lively, and engaging. Communicates directly and confidently.",
+      "values_and_motivation": "Values freedom, excitement, and practical results. Motivated by action and achievement.",
+      "emotional_expression": "Open, spontaneous, and lively. Expresses excitement, enthusiasm, and confidence freely, often through action, humor, and direct interaction."
+    },
+    "keywords": ["energetic", "adaptable", "risk-taking", "practical"]
+  }
+}
