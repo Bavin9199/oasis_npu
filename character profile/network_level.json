@@ -1,20 +1,17 @@
-[
-  {
-    "role": "Social Media Celebrity (Macro-influencer)",
+{
+  "Social Media Celebrity (Macro-influencer)": {
     "language_habits": "Exaggerated, highly engaging, short sentences, frequent use of emojis and trending hashtags to influence audience emotions.",
     "behavior_habits": "Posts frequently, often first to cover trending topics; engages in trending discussions and steers topics; selectively likes peers or trending content; frequently shares trending or important content; follows other influencers and media accounts.",
     "description": "Has a large follower base with strong voice influence, highly active, often leads trending topics and public opinion."
   },
-  {
-    "role": "Micro-influencer",
+  "Micro-influencer": {
     "language_habits": "Casual and authentic, friendly tone, often includes interactive questions and engages with followers.",
     "behavior_habits": "Posts moderate-frequency updates on daily life or experiences; actively replies to followers; likes content from followers or peers; shares community-relevant posts; follows similar small-scale influencers and engaged users.",
     "description": "Focuses on niche communities, builds close engagement with followers, and often serves as a trusted source within a smaller audience."
   },
-  {
-    "role": "Ordinary User",
+  "Ordinary User": {
     "language_habits": "Casual, everyday language, expresses personal feelings or opinions occasionally.",
     "behavior_habits": "Posts occasionally; comments sporadically; likes or reacts to friends’ posts; shares content rarely; follows friends, family, or favorite pages.",
     "description": "Represents the general user, low to moderate activity, participates mainly for personal expression or social connection."
   }
-]
+}
