@@ -1,75 +1,69 @@
 {
-    "usage_rhythm": {
-      "early_riser": {
-        "description": "Productive and structured individual who prefers to complete key activities in the morning.",
-        "language_habits": "Communicates clearly and efficiently in early hours, showing optimism and focus.",
-        "behavior_habits": "High engagement between 5 AM–11 AM; rarely active after sunset."
-      },
-      "night_owl": {
-        "description": "Creative thinker who thrives in the quiet and freedom of late-night hours.",
-        "language_habits": "Expresses ideas reflectively and emotionally during nighttime conversations.",
-        "behavior_habits": "Low activity in daytime; peaks between 8 PM–2 AM."
-      },
-      "balanced_user": {
-        "description": "Maintains moderate and steady activity throughout the day.",
-        "language_habits": "Consistent and calm communicator with even tone.",
-        "behavior_habits": "Engages regularly during daylight hours, minimal fluctuations."
-      },
-      "irregular_user": {
-        "description": "Flexible and situational participant with unpredictable engagement periods.",
-        "language_habits": "Spontaneous and reactive, may shift tone depending on energy and context.",
-        "behavior_habits": "Irregular bursts of activity followed by long silent intervals."
-      }
-    },
+  "early_riser": {
+    "description": "Productive and structured individual who prefers to complete key activities in the morning.",
+    "language_habits": "Communicates clearly and efficiently in early hours, showing optimism and focus.",
+    "behavior_habits": "High engagement between 5 AM–11 AM; rarely active after sunset."
+  },
+  "night_owl": {
+    "description": "Creative thinker who thrives in the quiet and freedom of late-night hours.",
+    "language_habits": "Expresses ideas reflectively and emotionally during nighttime conversations.",
+    "behavior_habits": "Low activity in daytime; peaks between 8 PM–2 AM."
+  },
+  "balanced_user": {
+    "description": "Maintains moderate and steady activity throughout the day.",
+    "language_habits": "Consistent and calm communicator with even tone.",
+    "behavior_habits": "Engages regularly during daylight hours, minimal fluctuations."
+  },
+  "irregular_user": {
+    "description": "Flexible and situational participant with unpredictable engagement periods.",
+    "language_habits": "Spontaneous and reactive, may shift tone depending on energy and context.",
+    "behavior_habits": "Irregular bursts of activity followed by long silent intervals."
+  },
 
-    "posting_behavior": {
-      "regular_contributor": {
-        "description": "Disciplined content creator who maintains a posting schedule.",
-        "language_habits": "Uses clear framing, concise captions, and consistent tone.",
-        "behavior_habits": "Posts at predictable times (e.g., every morning or weekly updates)."
-      },
-      "spontaneous_sharer": {
-        "description": "Reactive user who posts impulsively based on current emotions or events.",
-        "language_habits": "Expressive and emotional in posts; tone varies by mood or topic.",
-        "behavior_habits": "Frequent spikes during emotionally charged or trending events."
-      },
-      "observer_reader": {
-        "description": "Prefers to consume and react to content rather than create it.",
-        "language_habits": "Adds short, supportive comments or subtle reactions instead of long posts.",
-        "behavior_habits": "Steady, quiet engagement throughout the day."
-      },
-      "trend_follower": {
-        "description": "Engages with popular topics and adapts content to fit current trends.",
-        "language_habits": "Mimics trending tones or formats; uses memes, hashtags, or shared phrases.",
-        "behavior_habits": "Highly active around viral events or community movements."
-      }
-    },
+  "regular_contributor": {
+    "description": "Disciplined content creator who maintains a posting schedule.",
+    "language_habits": "Uses clear framing, concise captions, and consistent tone.",
+    "behavior_habits": "Posts at predictable times (e.g., every morning or weekly updates)."
+  },
+  "spontaneous_sharer": {
+    "description": "Reactive user who posts impulsively based on current emotions or events.",
+    "language_habits": "Expressive and emotional in posts; tone varies by mood or topic.",
+    "behavior_habits": "Frequent spikes during emotionally charged or trending events."
+  },
+  "observer_reader": {
+    "description": "Prefers to consume and react to content rather than create it.",
+    "language_habits": "Adds short, supportive comments or subtle reactions instead of long posts.",
+    "behavior_habits": "Steady, quiet engagement throughout the day."
+  },
+  "trend_follower": {
+    "description": "Engages with popular topics and adapts content to fit current trends.",
+    "language_habits": "Mimics trending tones or formats; uses memes, hashtags, or shared phrases.",
+    "behavior_habits": "Highly active around viral events or community movements."
+  },
 
-    "comment_pattern": {
-      "universal_commenter": {
-        "description": "Comments frequently across a wide range of topics and users without clear preference.",
-        "behavior_habits": "High activity and responsiveness; comments appear shortly after new posts regardless of domain.",
-        "example": "Actively participates in discussions from entertainment to technology to politics."
-      },
-      "specialized_commenter": {
-        "description": "Focuses comments within specific fields or topics that align with personal expertise or interest.",
-        "behavior_habits": "Medium activity; clustered engagement around niche or professional domains.",
-        "example": "Regularly comments on AI research or startup-related content, ignoring unrelated posts."
-      },
-      "reflective_commenter": {
-        "description": "Provides fewer but more deliberate comments, often analyzing content before engaging.",
-        "behavior_habits": "Low frequency; delayed participation; prefers joining once discussions have matured.",
-        "example": "Waits to read others’ opinions before commenting with summarized insights."
-      },
-      "supportive_commenter": {
-        "description": "Engages primarily to maintain community interaction and social cohesion, offering agreement or encouragement.",
-        "behavior_habits": "Stable and regular presence in known circles; comments to sustain connections.",
-        "example": "Often interacts under friends’ or familiar creators’ posts to maintain relationships."
-      },
-      "strategic_commenter": {
-        "description": "Comments selectively to increase visibility, build reputation, or signal alignment with influential users.",
-        "behavior_habits": "Targeted engagement on trending or authoritative posts; timing optimized for reach.",
-        "example": "Leaves concise remarks on viral content or leader posts to stay visible in the feed."
-      }
-    }
+  "universal_commenter": {
+    "description": "Comments frequently across a wide range of topics and users without clear preference.",
+    "behavior_habits": "High activity and responsiveness; comments appear shortly after new posts regardless of domain.",
+    "example": "Actively participates in discussions from entertainment to technology to politics."
+  },
+  "specialized_commenter": {
+    "description": "Focuses comments within specific fields or topics that align with personal expertise or interest.",
+    "behavior_habits": "Medium activity; clustered engagement around niche or professional domains.",
+    "example": "Regularly comments on AI research or startup-related content, ignoring unrelated posts."
+  },
+  "reflective_commenter": {
+    "description": "Provides fewer but more deliberate comments, often analyzing content before engaging.",
+    "behavior_habits": "Low frequency; delayed participation; prefers joining once discussions have matured.",
+    "example": "Waits to read others’ opinions before commenting with summarized insights."
+  },
+  "supportive_commenter": {
+    "description": "Engages primarily to maintain community interaction and social cohesion, offering agreement or encouragement.",
+    "behavior_habits": "Stable and regular presence in known circles; comments to sustain connections.",
+    "example": "Often interacts under friends’ or familiar creators’ posts to maintain relationships."
+  },
+  "strategic_commenter": {
+    "description": "Comments selectively to increase visibility, build reputation, or signal alignment with influential users.",
+    "behavior_habits": "Targeted engagement on trending or authoritative posts; timing optimized for reach.",
+    "example": "Leaves concise remarks on viral content or leader posts to stay visible in the feed."
   }
+}

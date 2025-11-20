@@ -183,7 +183,7 @@ def get_cognitive_bias(mbti, age, gender, country, profession):
 
 def get_network_levels(mbti, age, gender, country, profession, social_roles, cognitive_bias):
     network_level_content = load_json("network_level.json")
-    prompt = f"""Based on the provided personality traits, age, gender, profession, social roles and cognitive bias, please select 1 network level from the given list.-
+    prompt = f"""Based on the provided personality traits, age, gender, profession, social roles and cognitive bias, please select 1 network level from the given json list.-
     Input:
         Personality Traits: {mbti}
         Age: {age}
@@ -192,11 +192,12 @@ def get_network_levels(mbti, age, gender, country, profession, social_roles, cog
         Profession: {profession}
         Social roles: {social_roles}
         Cognitive bias: {cognitive_bias}
-    Available Network Levels and related descriptions:
+    Available Network Levels are : Ordinary User, Micro-influencer and Social Media Celebrity (Macro-influencer).
+    and related descriptions:
         {network_level_content}
     Output:
     [string of topics]
-    ["artificial intelligence"]
+    ["..."]
     Ensure your output looks like the output above in one line, don't output anything else.""" 
 
     response = client.chat.completions.create(model="gpt-4o-mini",
@@ -331,8 +332,8 @@ def build_user_profile():
     profile['interested_topics'] = interested_topics
     profile['social_roles'] = social_roles
     profile['cognitive_bias'] = cognitive_bias
-    profile['network_levels'] = network_levels
-    profile['action_habits'] = action_habits
+    profile['network_level'] = network_levels
+    profile['action_habit'] = action_habits
     return profile
 
 # --------------------------
@@ -391,7 +392,7 @@ def build_prompt(profile: Dict[str, Any],
     prompt_lines.append(f"Tone: {tone}. Length: up to {max_paragraphs} paragraph(s), each around {max_length} characters.")
     prompt_lines.append("Do not invent new facts, but you may rephrase or combine ideas to make the text flow naturally. Avoid repeating raw definitions.")
     prompt_lines.append("Write in full sentences that sound human and smooth, suitable for displaying in a profile or agent summary box.")
-    prompt_lines.append("")
+    prompt_lines.append("The static description is only about the information of name, gender, mbti, cognitive bias, professions and static personal things which couldn't be changed by the environments.")
     prompt_lines.append("After writing the main persona description, append two additional lines summarizing key patterns with related clear prefix:")
     prompt_lines.append("1) Language Traits: A line describing all notable characteristics related to the individual's language and communication style, such as tone, empathy, persuasiveness, listening habits, and inclusivity.")
     prompt_lines.append("2) Online Behavior: A line describing all notable patterns in the individual's behavior in digital or social networks, such as activity rhythms, schedule flexibility, social roles, network level, and biases in information consumption.")
@@ -400,6 +401,12 @@ def build_prompt(profile: Dict[str, Any],
     prompt_lines.append(f"The user name of this person is {user_name}. The person is a {age}-year-old {gender} people. The mbti of this person is {mbti}. The profession of this person is {profession}. The social roles of this person is {social_roles}.")
     prompt_lines.append(f"The cognitive bias of this person is {cognitive_bias}. The network levels of this person is {network_levels}. The action_habits of this person is {action_habits}.")
     prompt_lines.append("----")
+    prompt_lines.append("Output format:")
+    prompt_lines.append("""{
+        "static description": "...", 
+        "dynamic description":""language_traits": "...", "online_behavior": "...""
+    }""")
+    prompt_lines.append("Output ONLY JSON, no extra text or explanation.")
 
     for dim, snippets in dimension_snippets.items():
         prompt_lines.append(f"{dim}:")
@@ -490,7 +497,17 @@ def generate_description(*, use_llm: bool = True) -> Dict[str, Any]:
     if use_llm:
         try:
             description = call_llm(prompt)
-            return description.strip()
+            result = {}
+            try:
+                json_response = json.loads(description)
+                result["profile"] = profile
+                result["dynamic_info"] = json_response.get("dynamic description", {})
+                result["static_info"] = json_response.get("static description", {})
+                fallback = local_fallback_summary(profile, datasets)
+                result["original_description"] = fallback
+            except json.JSONDecodeError:
+                json_response = {"description": description}
+            return result
         except Exception as e:
             # fall back to local concatenation
             result["llm_error"] = str(e)
@@ -517,19 +534,65 @@ def generate_description(*, use_llm: bool = True) -> Dict[str, Any]:
     # result.update({"description": fallback})
     #return result
 
+def local_fallback_summary(profile: Dict[str, Any],
+                           datasets: Dict[str, Dict[str, Any]]) -> str:
+    """
+    Build a structured fallback description when LLM fails.
+    Each dimension (corresponding to each JSON file) will have its own section.
+    """
+    parts = []
+
+    for dim, data in datasets.items():           # dim = 文件名（action/bias/...）
+        vals = profile.get(dim, [])
+        print(vals)
+        if not isinstance(vals, list):
+            vals = [vals]
+
+        dim_texts = []
+
+        for v in vals:
+            entry = None
+
+            # JSON 如果是列表（如 [{key: {...}}, {}]）
+            if isinstance(data, list):
+                entry = next(
+                    (item.get(v) for item in data if isinstance(item, dict) and v in item),
+                    None
+                )
+            else:
+                # JSON 是 dict 格式
+                entry = data.get(v)
+
+            if entry:
+                texts = extract_texts_from_entry(entry)
+                if texts:
+                    dim_texts.extend(texts)
+
+        # 当前文件有文本 → 输出标题 + 内容
+        if dim_texts:
+            section = f"[{dim}]\n" + " ".join(dim_texts)
+            parts.append(section)
+
+    # 每一块用空行隔开，更清晰
+    return "\n\n".join(parts) if parts else "(no data available to describe user)"
+
 def generate_user_descriptions(n):
     # user_description = []
     start_time = datetime.now()
     max_workers = 10
     with open("user_descriptions.csv", "w", newline='', encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["", "desc"])  # 表头
+        writer.writerow(["", "profile", "original_description", "static_desc", "dynamic_desc"])
     
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = [executor.submit(generate_description) for _ in range(n)]
             for i, future in enumerate(as_completed(futures)):
-                agent_desc = future.result()
-                writer.writerow([i, agent_desc])
+                result = future.result()
+                profile = result["profile"]
+                original_description = result["original_description"]
+                static_desc = result["static_info"]
+                dynamic_desc = result["dynamic_info"]
+                writer.writerow([i, profile, original_description, static_desc, dynamic_desc])
                 
                 elapsed_time = datetime.now() - start_time
                 print(f"Generated {i+1}/{n} user profiles. Time elapsed: "
