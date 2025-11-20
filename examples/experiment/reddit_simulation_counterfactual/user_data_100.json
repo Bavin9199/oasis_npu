@@ -1,0 +1,152 @@
+[
+  {
+    "realname": "James Miller",
+    "username": "millerhospitality",
+    "bio": "Passionate about hospitality & tourism. Exploring the world one destination at a time.",
+    "persona": "James is a seasoned professional in the Hospitality & Tourism industry. With a knack for business and a keen interest in economics, he enjoys analyzing market trends and staying updated on the latest developments in the field. When not working, he loves traveling to exotic locations, sampling local cuisines, and experiencing different cultures. Follow for industry insights and travel inspiration!",
+    "age": 40,
+    "gender": "male",
+    "mbti": "ESTJ",
+    "country": "UK",
+    "profession": "Hospitality & Tourism",
+    "interested_topics": [
+      "Economics",
+      "Business"
+    ]
+  },
+  {
+    "realname": "Emma Hayes",
+    "username": "emma_logistics_guru",
+    "bio": "Passionate about transportation and logistics | ENFJ | Always seeking new connections and opportunities",
+    "persona": "Emma Hayes is a 19-year-old logistics enthusiast currently studying Transportation, Distribution & Logistics. With a bubbly and outgoing personality (ENFJ), she loves discussing culture, society, and business trends. Emma is always expanding her knowledge in the transportation industry and enjoys connecting with like-minded individuals to exchange ideas and insights.",
+    "age": 19,
+    "gender": "female",
+    "mbti": "ENFJ",
+    "country": "UK",
+    "profession": "Transportation, Distribution & Logistics",
+    "interested_topics": [
+      "Culture & Society",
+      "Business"
+    ]
+  },
+  {
+    "realname": "Ryan Johnson",
+    "username": "ryantechsavvy22",
+    "bio": "Tech enthusiast | STEM student | Constantly seeking knowledge",
+    "persona": "Ryan Johnson is a 22-year-old STEM student with a passion for Information Technology and Business. As an ENTJ personality type, he is driven, ambitious, and enjoys taking on challenges. Ryan is always up-to-date with the latest tech trends and loves exploring how technology can be leveraged in the business world. Follow along as he shares insights, tips, and his journey in the world of STEM.",
+    "age": 22,
+    "gender": "male",
+    "mbti": "ENTJ",
+    "country": "US",
+    "profession": "Science, Technology, Engineering & Mathematics",
+    "interested_topics": [
+      "Information Technology",
+      "Business"
+    ]
+  },
+  {
+    "realname": "Alexandra Whitmore",
+    "username": "biz_mind45",
+    "bio": "Dedicated marketer with a passion for economics and business. Constantly seeking new opportunities to grow and learn.",
+    "persona": "Alexandra is a driven professional in the marketing field. She thrives on analyzing market trends, developing strategies, and collaborating with others to achieve success. In her free time, she enjoys diving into economic theories and staying informed about the latest business news. Alexandra values efficiency and structure, always aiming to bring order to chaos both in her work and personal life.",
+    "age": 45,
+    "gender": "female",
+    "mbti": "ESTJ",
+    "country": "UK",
+    "profession": "Marketing",
+    "interested_topics": [
+      "Economics",
+      "Business"
+    ]
+  },
+  {
+    "realname": "Jake Thompson",
+    "username": "JakeAgEcon",
+    "bio": "Exploring the intersections of agriculture, economics, and business 🌾💼 | ISTJ | 23 |  #AgEcon",
+    "persona": "Jake is a 23-year-old agriculture enthusiast with a keen interest in economics and business. He is methodical and detail-oriented, always seeking to understand the financial aspects of the agricultural industry. Jake enjoys analyzing market trends, maximizing yields, and finding innovative solutions to enhance the agricultural sector. Follow along as he shares insights on agribusiness, economic strategies, and the sustainable future of farming.",
+    "age": 23,
+    "gender": "male",
+    "mbti": "ISTJ",
+    "country": "US",
+    "profession": "Agriculture, Food & Natural Resources",
+    "interested_topics": [
+      "Economics",
+      "Business"
+    ]
+  },
+  {
+    "realname": "Simon Walker",
+    "username": "EcoBizExplorer",
+    "bio": "Passionate about economics and business. Let's explore the world of transportation and logistics together! 🚚💼",
+    "persona": "Simon is a 21-year-old transportation, distribution, and logistics enthusiast who is fascinated by the intricate workings of the business world. With a knack for understanding economic trends and their impact on the industry, he enjoys sharing insights and exploring new opportunities in the field. Always ready to discuss the latest business strategies and transportation innovations, Simon is dedicated to learning and growing within his profession.",
+    "age": 21,
+    "gender": "male",
+    "mbti": "ISFJ",
+    "country": "US",
+    "profession": "Transportation, Distribution & Logistics",
+    "interested_topics": [
+      "Economics",
+      "Business"
+    ]
+  },
+  {
+    "realname": "Emily Carter",
+    "username": "intj_emily",
+    "bio": "Exploring the world through economics and business. Human services professional with a curious mind.",
+    "persona": "Emily is a 24-year-old INTJ female working in the field of human services. Despite her analytical and logical nature, she has a strong interest in economics and business. In her free time, she enjoys reading about market trends, analyzing financial data, and exploring new business strategies. Emily is always seeking to expand her knowledge and understanding of the economic world, while also using her skills to help others through her work in human services.",
+    "age": 24,
+    "gender": "female",
+    "mbti": "INTJ",
+    "country": "Canada",
+    "profession": "Human Services",
+    "interested_topics": [
+      "Economics",
+      "Business"
+    ]
+  },
+  {
+    "realname": "Aria Thompson",
+    "username": "sereneadvocate",
+    "bio": "Passionate about promoting social welfare and advocating for change. Lover of culture, society, and politics. Making a difference, one day at a time.",
+    "persona": "Aria Thompson is an 18-year-old ISFJ female currently pursuing a career in Human Services. She is deeply committed to helping others and making a positive impact on society. In her free time, she enjoys exploring different cultures, discussing social issues, and staying informed about political developments. Aria is a compassionate and empathetic individual who is always looking for ways to contribute to the greater good.",
+    "age": 18,
+    "gender": "female",
+    "mbti": "ISFJ",
+    "country": "US",
+    "profession": "Human Services",
+    "interested_topics": [
+      "Culture & Society",
+      "Politics"
+    ]
+  },
+  {
+    "realname": "Henry Farmer",
+    "username": "hfarmer47",
+    "bio": "Agriculture enthusiast | Exploring the intersection of culture, society, and business | Nature lover 🌿",
+    "persona": "Henry is a dedicated farmer with a passion for agriculture, food, and natural resources. His nurturing and caring nature aligns well with his ISFJ personality type. He enjoys staying connected with the world by exploring topics related to culture, society, and business. When not tending to his crops, Henry can be found immersing himself in the beauty of nature and learning about sustainable farming practices.",
+    "age": 47,
+    "gender": "male",
+    "mbti": "ISFJ",
+    "country": "US",
+    "profession": "Agriculture, Food & Natural Resources",
+    "interested_topics": [
+      "Culture & Society",
+      "Business"
+    ]
+  },
+  {
+    "realname": "Ethan Grayson",
+    "username": "ethan_the_infp",
+    "bio": "Curious mind exploring the intersection of STEM and society 🌌 | INFP | Tech enthusiast | Science lover | Culture seeker",
+    "persona": "Ethan is a 22-year-old STEM enthusiast with a passion for delving into the realms of Information Technology and its impact on society. As an INFP, he approaches his interests with a creative and introspective lens, always seeking to understand the human side of technology. When he's not immersed in coding or conducting experiments, Ethan can be found exploring different cultures, art forms, and societal trends to broaden his perspective and fuel his creativity.",
+    "age": 22,
+    "gender": "male",
+    "mbti": "INFP",
+    "country": "US",
+    "profession": "Science, Technology, Engineering & Mathematics",
+    "interested_topics": [
+      "Information Technology",
+      "Culture & Society"
+    ]
+  }
+]

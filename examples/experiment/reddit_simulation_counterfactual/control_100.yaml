@@ -1,0 +1,34 @@
+---
+data:
+  user_path: ./user_data_100.json
+  pair_path: ./counterfactual_100.json
+  db_path: ./counterfactual_100_control.db
+simulation:
+  recsys_type: reddit
+  controllable_user: true
+  allow_self_rating: false
+  show_score: true
+  activate_prob: 1
+  clock_factor: 10
+  num_timesteps: 30
+  max_rec_post_len: 50
+  round_post_num: 30
+  follow_post_agent: false
+  mute_post_agent: false
+  refresh_rec_post_count: 5
+  init_post_score: 0
+  available_actions:
+    - like_comment
+    - dislike_comment
+    - like_post
+    - dislike_post
+    - search_posts
+    - search_user
+    - trend
+    - refresh
+    - do_nothing
+    - create_comment
+inference:
+  model_type: gpt-4o-mini
+  server_url: []
+
