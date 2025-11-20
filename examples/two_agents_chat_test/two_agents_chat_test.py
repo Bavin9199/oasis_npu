@@ -35,7 +35,7 @@ class SimpleAgent:
         这里是每轮生成 prompt 的地方。
         你可以用 dynamic_desc + 上一条消息 message 组合 prompt。
         """
-        selected_type = "RAG"
+        selected_type = "llm"
         if selected_type == "llm":
             dynamic_desc = _select_prompt_by_llm(agent_prompt, message)
         elif selected_type == "static_only":
