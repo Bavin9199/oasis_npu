@@ -223,7 +223,7 @@ def get_action_habits(mbti, age, gender, country, profession, social_roles, cogn
         network_levels: {network_levels}
     Available Action Habits and related descriptions:
         {action_habits_content}
-    Please choose 2-3 action habits from the second_level topic in available action habits list.
+    Please choose 2-3 action habits from the second_level topic in available action habits list based on the profile information carefully.
     Output:
     [string of topics]
     ["artificial intelligence"]
@@ -570,11 +570,11 @@ def local_fallback_summary(profile: Dict[str, Any],
 
         # 当前文件有文本 → 输出标题 + 内容
         if dim_texts:
-            section = f"[{dim}]\n" + " ".join(dim_texts)
+            section = f"[{dim}]" + " ".join(dim_texts)
             parts.append(section)
 
     # 每一块用空行隔开，更清晰
-    return "\n\n".join(parts) if parts else "(no data available to describe user)"
+    return " ".join(parts) if parts else "(no data available to describe user)"
 
 def generate_user_descriptions(n):
     # user_description = []
@@ -599,7 +599,7 @@ def generate_user_descriptions(n):
                     f"{elapsed_time}")
 
 if __name__ == "__main__":
-    N = 5  # Target user number
+    N = 3  # Target user number
     user_desc = generate_user_descriptions(N)
     print(f"Generated {N} user profiles and saved.")
 
